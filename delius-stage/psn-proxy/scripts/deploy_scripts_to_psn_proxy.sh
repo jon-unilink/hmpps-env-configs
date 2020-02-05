@@ -4,5 +4,7 @@ chmod u+x *.sh
 scp *.sh ec2-user@hmpps-delius-psn-test-a:/opt/hmpps/proxy-scripts/
 scp *.sh ec2-user@hmpps-delius-psn-test-b:/opt/hmpps/proxy-scripts/
 
-scp ../etc/letsencrypt/renewal/stage.psn.probation.service.justice.gov.uk.conf ec2-user@hmpps-delius-psn-test-a:/etc/letsencrypt/renewal/stage.psn.probation.service.justice.gov.uk.conf
-scp ../etc/letsencrypt/renewal/stage.psn.probation.service.justice.gov.uk.conf ec2-user@hmpps-delius-psn-test-b:/etc/letsencrypt/renewal/stage.psn.probation.service.justice.gov.uk.conf
+# manually download tls certs from AWS S3 & navigate to the download folder
+cd ~/Downloads
+scp -r *.pem ec2-user@hmpps-delius-psn-test-a:/opt/hmpps/proxy-scripts
+scp -r *.key ec2-user@hmpps-delius-psn-test-b:/opt/hmpps/proxy-scripts
