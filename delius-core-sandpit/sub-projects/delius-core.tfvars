@@ -12,6 +12,7 @@ db_size_delius_core = {
   disks_quantity = 2  # Do not decrease this
   disk_size      = 500 # Do not decrease this
   # total_storage  = 1000 # This should equal disks_quantity x disk_size
+  high_availability_count = 1
 }
 
 ansible_vars_oracle_db = {
@@ -31,18 +32,17 @@ ansible_vars_oracle_db = {
   oracle_dbca_template_file     = "database"
 }
 
-# LDAP
-ansible_vars_apacheds = {
-  import_users_ldif = "seed.ldif"
-  import_users_ldif_base_users = "cn=Users,dc=moj,dc=com"
-}
-
 # WebLogic
 ansible_vars = {
   ndelius_display_name = "National Delius - DEVELOPMENT USE ONLY"
   ndelius_training_mode = "development"
   ndelius_log_level = "DEBUG"
   database_sid = "SANNDA"
+}
+
+# User Management
+umt_config = {
+  version = "latest"
 }
 
 env_user_access_cidr_blocks = []

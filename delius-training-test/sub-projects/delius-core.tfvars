@@ -31,10 +31,6 @@ ansible_vars_oracle_db = {
   oracle_dbca_template_file     = "database"
 }
 
-# LDAP
-ansible_vars_apacheds = {
-}
-
 # WebLogic
 ansible_vars = {
   ndelius_display_name = "National Delius - TEST USE ONLY"
@@ -72,8 +68,8 @@ env_user_access_cidr_blocks = [
   # -RRP (Reducing Reoffending Partnership)
   "62.253.83.37/32",
 
-  # - ARCC
-  "51.179.193.241/32",
+  # - ARCC/DTV (Achieving Real Change in Communities - Durham & Tees Valley)
+  "51.179.197.1/32",
 
   # - EOS
   "5.153.255.210/32",   # EOS Public IP

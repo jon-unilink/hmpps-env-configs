@@ -31,11 +31,8 @@ ansible_vars_oracle_db = {
   oracle_dbca_template_file     = "database"
 }
 
-# LDAP
-ansible_vars_apacheds = {
-  import_users_ldif = "seed.ldif"
-  import_users_ldif_base_users = "cn=Users,dc=moj,dc=com"
-}
+# enable ingress from the CI (Jenkins/AWS Codepipeline)
+ci_db_ingress_1521 = true
 
 # WebLogic
 ansible_vars = {
@@ -43,6 +40,11 @@ ansible_vars = {
   ndelius_training_mode = "development"
   ndelius_log_level = "DEBUG"
   database_sid = "DNDA"
+}
+
+# User Management
+umt_config = {
+  version = "latest"
 }
 
 env_user_access_cidr_blocks = []

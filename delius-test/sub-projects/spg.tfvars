@@ -1,6 +1,3 @@
-#DOCKER IMAGE VERSION OF THE SPG DEPLOYABLE CODE
-image_version = "latest"
-
 # This is used for ALB logs to S3 bucket.
 # This is fixed for each region. if region changes, this changes
 lb_account_id = "652711504416"
@@ -46,10 +43,10 @@ spg_build_inv_dir = "/tmp/ansible/inventories/hmpps/generic-default"
 
 ### MPX ###
 
-spg_mpx_asg_desired = 1
-spg_mpx_asg_max = 2
-spg_mpx_asg_min = 1
-spg_mpx_service_desired_count = 1
+spg_mpx_asg_desired = 2
+spg_mpx_asg_max = 4
+spg_mpx_asg_min = 0
+spg_mpx_service_desired_count = 2
 SPG_MPX_JAVA_MAX_MEM = 3645
 SPG_MPX_HOST_TYPE = "hybrid"
 

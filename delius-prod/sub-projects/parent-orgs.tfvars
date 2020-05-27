@@ -18,7 +18,7 @@ PO_SPG_CONFIGURATION = {
   SPG_PUBLISHED_FQDN_NOPROXY       = "${SPG_ISO_FQDN}"
 
 
-  PO_ACTIVE_CONNECTIONS = "PF,STC,MTC,POSTUB"
+  PO_ACTIVE_CONNECTIONS = "STC,MTC,POSTUB"
   #PO_XXX_CALLING_VIA_PROXY_URL_REWRITE#  null, "" or "replace_string|replace_with" eg "spgw-ext.pre-prod.probation|spgw-int-psn.probation" (needed so that UD proxy can rewrite urls provided for oAuth signature cert validation)
 
   #THERE IS NO C00 in ND prod yet, nor an assigned crc for testing
@@ -32,16 +32,6 @@ PO_SPG_CONFIGURATION = {
   PO_POSTUB_SIGNING_COMMON_NAME = "signing.{{ lookup('env','SPG_CRC_FQDN') }}"
   PO_POSTUB_ENDPOINT_URL = "https://spgw-int-psn.probation.service.justice.gov.uk:9001/POSTUB/cxf/CRC-100"
   PO_POSTUB_PROXIED_URL = "https://spgw-crc-ext.probation.service.justice.gov.uk:9001/cxf/CRC-100"
-
-
-  PO_PF_NAME = "PURPLE FUTURES"
-  PO_PF_CRC_LIST = "C04,C05,C06,C07,C20"
-  PO_PF_CALLING_VIA_PROXY_URL_REWRITE = "spgw-ext.probation,spgw-ext-psn.probation"
-  PO_PF_TLS_COMMON_NAME = "shard-api-pre.interservefls.gse.gov.uk"
-  PO_PF_SIGNING_COMMON_NAME = "signing-shard-api.interservefls.gse.gov.uk"
-  PO_PF_ENDPOINT_URL = "https://spgw-int-psn.probation.service.justice.gov.uk:9001/PF/cxf/CRC-101"
-  PO_PF_PROXIED_URL = "https://shard-api.interservefls.gse.gov.uk:9001/cxf/CRC-101"
-
 
   PO_STC_NAME = "SEETEC"
   PO_STC_CRC_LIST = "C21"
@@ -58,6 +48,9 @@ PO_SPG_CONFIGURATION = {
   PO_MTC_SIGNING_COMMON_NAME = "spg-iso.omnia.mtcnovo.net"
   PO_MTC_ENDPOINT_URL = "https://spgw-int-psn.probation.service.justice.gov.uk:9001/MTC/CRC/CRCendpoint"
   PO_MTC_PROXIED_URL = "https://spg.omnia.mtcnovo.net:9001/CRC/CRCendpoint"
+
+  # The list of CRCs who should NOT receive MetaDtaaUpdate messages (includes PF and MTC)
+  SPG_DISABLED_META_LIST = "C03,C05,C06,C07,C15,C16,C17,C19,C20"
 }
 
 
