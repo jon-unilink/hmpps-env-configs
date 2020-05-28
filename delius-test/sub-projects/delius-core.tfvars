@@ -12,7 +12,6 @@ db_size_delius_core = {
   disk_iops      = 1000
   disks_quantity = 4           # Do not decrease this
   disk_size      = 500         # Do not decrease this
-
   # total_storage  = 2000 # This should equal disks_quantity x disk_size
 }
 
